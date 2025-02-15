@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+.stroke-text {
+    -webkit-text-stroke: 2px white;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      -1px -1px 0 black,
+       1px -1px 0 black,
+      -1px  1px 0 black,
+       1px  1px 0 black;
+  }
+  
+  /* Apply smaller stroke on smaller screens */
+  @media (max-width: 768px) {
+    .stroke-text {
+      -webkit-text-stroke: 1px white;
+    }
+  }
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Orelega One';
+  src: url('/fonts/OrelegaOne-Regular.ttf') format('truetype'); /* Correct format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-font {
+  font-family: 'Orelega One', sans-serif;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype'); /* Correct format */
+  font-weight: bold;
+  font-style: normal; /* Fixed */
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+}
