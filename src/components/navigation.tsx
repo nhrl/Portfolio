@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react"; // Icons for mobile menu toggle
+import logo from "../assets/pictures/logo-removebg-preview.png"
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-bold">NBDEV</h1>
+        <img className="h-[35px] cursor-pointer md:h-[40px]" src={logo} alt="Logo" />
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6">
