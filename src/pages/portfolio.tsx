@@ -1,6 +1,7 @@
 import Navigation from "../components/navigation"
 import Hero from '../components/hero'
 import Works from "../components/works"
+import Tech from "../components/tech"
 
 function Portfolio () {
   return (
@@ -8,6 +9,7 @@ function Portfolio () {
       <Navigation/> 
       <div id="hero"><Hero /></div>
       <div id="works"><Works /></div>
+      <div id="tech"><Tech /></div>
     </>
   )
 }
