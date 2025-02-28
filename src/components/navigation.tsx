@@ -33,7 +33,7 @@ const Navigation = () => {
         <ul className="hidden md:flex gap-6">
           <li><a href="#hero" className="hover:text-blue-500">Home</a></li>
           <li><a href="#works" className="hover:text-blue-500">Works</a></li>
-          <li><a href="#skills" className="hover:text-blue-500">Skills</a></li>
+          <li><a href="#tech" className="hover:text-blue-500">Skills</a></li>
           <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
         </ul>
         <div className="hidden md:block">
@@ -51,7 +51,7 @@ const Navigation = () => {
         <ul className="md:hidden absolute top-16 left-0 w-full bg-black shadow-md p-4 flex flex-col gap-4">
           <li><a href="#hero" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Home</a></li>
           <li><a href="#works" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Works</a></li>
-          <li><a href="#skills" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Skills</a></li>
+          <li><a href="#tech" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Skills</a></li>
           <li><a href="#contact" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Contact</a></li>
           <div>
             <button className="border-1 border-white p-2 px-4 cursor-pointer rounded-sm">Download CV</button>
