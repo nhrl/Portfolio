@@ -6,7 +6,7 @@ function Hero() {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 1.5, ease: "easeInOut" }} 
-      className="text-white z-10 container mx-autopy-4 flex justify-center items-center min-h-[990px] max-h-[700px] h-auto"
+      className="text-white z-10 container mx-autopy-4 flex justify-center items-center min-h-[850px] max-h-[800px] h-auto"
     >
       <div>
         <motion.p
