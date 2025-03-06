@@ -28,6 +28,7 @@ body {
   src: url('./assets/fonts/OrelegaOne-Regular.ttf') format('truetype'); /* Correct format */
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 .custom-font {
@@ -39,6 +40,7 @@ body {
   src: url('./assets/fonts/Inter_18pt-Bold.ttf') format('truetype'); /* Correct format */
   font-weight: bold;
   font-style: normal; /* Fixed */
+  font-display: swap;
 }
 
 .inter {
