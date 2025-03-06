@@ -27,7 +27,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <img className="h-[35px] cursor-pointer md:h-[40px]" loading="lazy" src={logo} alt="Logo" />
+        <a href="#"><img className="h-[20px] cursor-pointer md:h-[30px]" loading="lazy" src={logo} alt="Logo" /></a>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6">
