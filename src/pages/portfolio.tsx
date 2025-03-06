@@ -9,7 +9,7 @@ function Portfolio () {
       <Navigation/> 
       <div id="hero" className="w-full flex justify-center"><Hero /></div>
       <div id="works" className="w-full flex justify-center"><Works /></div>
-      <div id="tech"><Tech /></div>
+      <div id="tech" className="w-full flex justify-center"><Tech /></div>
     </>
   )
 }
