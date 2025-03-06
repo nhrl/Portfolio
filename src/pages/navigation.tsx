@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react"; // Icons for mobile menu toggle
-import logo from "../assets/pictures/logo.avif"
+import logo from "../assets/pictures/logoF.png"
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
