@@ -13,7 +13,7 @@ import Node from "./icons/Node js.svg";
 import Supabase from "./icons/Supabase.svg";
 import ReactNative from "./icons/React.svg";
 import Expo from "./icons/Expo.svg";
-import SQLite from "./icons/sqlite.webp";
+import SQLite from "./icons/SQLite.svg";
 import Angular from "./icons/Angular.svg";
 import MySQL from "./icons/Mysql.svg";
 import Laravel from "./icons/Laravel.svg";
