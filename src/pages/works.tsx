@@ -128,7 +128,7 @@ function Works() {
               <div className="w-[370px] mt-4 flex flex-col [@media(max-width:360px)]:w-[280px]">
                 <h2 className="text-white font-bold">Project Link</h2>
                 <div className="w-full flex justify-center">
-                  <div className="w-3/5 flex justify-center gap-6 p-2">
+                  <div className="flex justify-center gap-6 p-2">
                   {project.links
                     .filter(link => link.web || link.github)
                     .map((link, linkIndex) => (
