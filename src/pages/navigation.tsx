@@ -25,7 +25,7 @@ const Navigation = () => {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-3 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#"><img className="h-[20px] cursor-pointer md:h-[30px]" loading="lazy" src={logo} alt="Logo" /></a>
 
