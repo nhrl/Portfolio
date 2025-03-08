@@ -99,7 +99,7 @@ function Works() {
       <div className="flex justify-center">
         <h1 className="text-[clamp(2rem,3cqw,3rem)] font-bold text-[#0D9488]">Projects</h1>
       </div>
-      <div className="overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-y-30 md:gap-y-40 gap-x-5 pt-20 lg:pt-30 [@media(min-width:1400px)]:px-30 overflow-y-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-30 md:gap-y-40 gap-x-5 pt-20 lg:pt-30 [@media(min-width:1400px)]:px-30 overflow-y-hidden">
         {projects.map((project, index) => {
           const ref = useRef(null);
           const isInView = useInView(ref, { once: true, amount: 0.5 });

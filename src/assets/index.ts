@@ -24,13 +24,12 @@ import Tailwind from "./icons/Tailwind.svg";
 import Vite from "./icons/Vite.svg"
 import php from "./icons/php.svg";
 import postgree from "./icons/postgre.svg";
-import rest from "./icons/rest.svg";
 import express from "./icons/Express.svg";
 import bootsrap from "./icons/bootsrap.svg";
 import vscode from "./icons/vscode.svg";
 import postman from "./icons/postman.svg";
 import git from "./icons/Git.svg";
-import github from "./icons/github.svg";
+
 
 export {
   icb, fundflow, Typescript, Next,
@@ -38,6 +37,6 @@ export {
   SQLite, pgc_ecom, pgc_erp, Angular,
   MySQL, Laravel, Firebase, VB, ccs_erp,
   ccs_ecomm, Js, Tailwind, Vite,
-  php, postgree, rest, express, bootsrap,
-  postman, git, github, vscode
+  php, postgree, express, bootsrap,
+  postman, git, vscode
 };

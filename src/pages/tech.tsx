@@ -3,8 +3,8 @@ import {
   Typescript, Next, Node, 
   ReactNative, Angular,
   MySQL, Laravel, Js,
-  Tailwind, Vite, php, postgree, rest, express, bootsrap,
-  postman, git, github, vscode} from "../assets";
+  Tailwind, Vite, php, postgree, express, bootsrap,
+  postman, git, vscode} from "../assets";
 
 
 const frontend = [
@@ -24,14 +24,12 @@ const backend = [
     {svg:Laravel, name:"Laravel"},
     {svg:MySQL, name:"MySQL"},
     {svg:postgree, name:"PostgreSQL"},
-    {svg:rest, name:"REST"},
     {svg:express, name:"Express.js"},
 ]
 
 const devTools = [
     {svg:git, name:"Git"},
     {svg:vscode, name:"VsCode"},
-    {svg:github, name:"Github"},
     {svg:postman, name:"Postman"},
 ]
 

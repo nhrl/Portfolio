@@ -1,12 +1,13 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 html {
   scroll-behavior: smooth;
 }
 
 body {
-    background-color: #100C08;
+    background-color: #131312;
 }
+
 
 .stroke-text {
     -webkit-text-stroke: 1px #0D9488;
