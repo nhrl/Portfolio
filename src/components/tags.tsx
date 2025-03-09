@@ -1,13 +1,18 @@
+
 type TagsProps = {
-    svg:string;
+    svg:any;
     name:string
 }
 
 const Tags: React.FC<TagsProps> = ({svg, name}) => {
     return (
-        <div className="h-[48px] w-[176px] border-[2px] border-[#AFB1B1] flex items-center rounded-md p-1 [@media(max-width:360px)]:w-[140px] [@media(max-width:360px)]:h-[40px]">
-            <img className="h-[24px] w-[24px] ml-3" src={svg} alt="svg icon" />
-            <p className="text-white pl-2 text-[clamp(0.7rem,0.8cqw,0.9rem)]">{name}</p>
+        <div className="flex items-center gap-2 px-3 py-2 border rounded-md dark:border-[#cfcece]">
+            {typeof svg === "string" ? (
+                <img src={svg} alt={name} className="h-6 w-6" />
+            ) : (
+                <span className="h-6 w-6 flex items-center">{svg}</span>
+            )}
+            <span className="text-sm">{name}</span>
         </div>
     )
 };
