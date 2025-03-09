@@ -1,7 +1,4 @@
-import profile from "../assets/pictures/profile.jpg";
-import { IoLocationOutline } from "react-icons/io5";
-import { CiMail } from "react-icons/ci";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import { RiStackLine } from "react-icons/ri";
 import { TbApi } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
@@ -49,28 +46,6 @@ const devTools = [
 function Home() {
   return (
     <>
-     <section className="border-[1px] border-gray-300 dark:border-[#232323] p-2 rounded-xl bg-[#ffffff] dark:bg-[#161716] transition duration-300">
-      <div className="flex md:items-center gap-4">
-        <img className="[@media(max-width:360px)]:rounded-full [@media(max-width:360px)]:h-10 [@media(max-width:360px)]:w-10 rounded-lg h-30 w-30 md:h-40 md:w-40" src={profile} alt="Profile" />
-        <div className="flex-1">
-          <h1 className="text-lg md:text-2xl font-bold text-gray-900 dark:text-white">
-            Nhoriel Balenzua
-          </h1>
-          <div className="flex items-center gap-2 mt-0.5">
-            <IoLocationOutline className="text-gray-900 dark:text-white" />
-            <p className="text-sm text-gray-900 dark:text-white">Dumaguete, Philippines</p>
-          </div>
-          <h2 className="font-medium mt-1.5 md:mt-2 text-gray-900 dark:text-white">
-            Web Developer / Mobile Developer
-          </h2>
-          <div className="flex gap-3 items-center mt-1.5 md:mt-2">
-            <CiMail className="text-gray-900 dark:text-white cursor-pointer" size={22} />
-            <FaGithub className="text-gray-900 dark:text-white" size={22} />
-            <FaLinkedin className="text-gray-900 dark:text-white" size={22} />
-          </div>
-        </div>
-      </div>
-    </section>
     <section className="mt-2 flex flex-col md:flex-row gap-2">
         <div className="flex-1 flex flex-col gap-2">
             <div className="flex-1 border-[1px] border-gray-300 dark:border-[#232323] p-2 rounded-lg bg-[#ffffff] dark:bg-[#161716] transition duration-300">
