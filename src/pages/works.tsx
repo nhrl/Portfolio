@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import Card from "../components/card";
-import Tags from "../components/tags";
+
 import { 
   icb, fundflow, pgc_ecom, pgc_erp, 
   Typescript, Next, Node, Supabase, 
@@ -95,11 +95,11 @@ const projects = [
 function Works() {
   
   return (
-    <section id="works-section" className="container mb-15">
+    <section id="works-section" className="container mt-20">
       <div className="flex justify-center">
-        <h1 className="text-[clamp(2rem,3cqw,3rem)] font-bold text-[#0D9488]">Projects</h1>
+        <h1 className="text-[clamp(1.9rem,2.2cqw,2.8rem)] font-medium dark:text-[#fafafa] text-[#171717]">Projects</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-30 md:gap-y-40 gap-x-5 pt-20 lg:pt-30 [@media(min-width:1400px)]:px-30 overflow-y-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-3 overflow-y-hidden mt-7">
         {projects.map((project, index) => {
           const ref = useRef(null);
           const isInView = useInView(ref, { once: true, amount: 0.5 });
@@ -110,54 +110,10 @@ function Works() {
               initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50, y: 50 }}
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeInOut" }}
-              className="flex items-center flex-col  pt-2 pb-2"
+              className="flex items-center flex-col border-[1px] border-gray-300 dark:border-[#232323] col-span-1 rounded-xl"
             >
               {/* Image and Title Section */}
-              <Card image={project.image} title={project.title} description={project.description}/>
-              {/* Tags Section */}
-              <div className="w-[370px] mt-7 [@media(max-width:360px)]:w-[280px]">
-                <h2 className="text-white font-bold">Tech Used</h2>
-              </div>  
-              <div className="grid grid-cols-2 gap-x-3 gap-y-3 [@media(max-width:360px)]:px-[10px] mt-2">
-                {project.tags.map((tag, tagIndex) => (
-                  <Tags key={tagIndex} svg={tag.svg} name={tag.name} />
-                ))}
-              </div>
-
-              {/* Link Section */}
-              <div className="w-[370px] mt-4 flex flex-col [@media(max-width:360px)]:w-[280px]">
-                <h2 className="text-white font-bold">Project Link</h2>
-                <div className="w-full flex justify-center">
-                  <div className="flex justify-center gap-6 p-2">
-                  {project.links
-                    .filter(link => link.web || link.github)
-                    .map((link, linkIndex) => (
-                      <div key={`link-${linkIndex}`} className="flex gap-4">
-                        {link.web && (
-                          <a 
-                            href={link.web} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="text-[#0D9488] hover:underline text-sm"
-                          >
-                            Live Demo
-                          </a>
-                        )}
-                        {link.github && (
-                          <a 
-                            href={link.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="text-[#0D9488] hover:underline text-sm"
-                          >
-                            GitHub Repo
-                          </a>
-                        )}
-                      </div>
-                  ))}
-                  </div>
-                </div>
-              </div>
+              <Card project={project}/>
             </motion.div>
           );
         })}
