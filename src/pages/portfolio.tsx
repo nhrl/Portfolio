@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Works from "./works";
-import Tech from "./tech";
 import Home from "./home";
 import { IoSunnyOutline, IoMoonOutline, IoLocationOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
@@ -33,6 +32,7 @@ function Portfolio() {
                       </h1>
                       <div className="pr-2">
                         <button
+                          aria-label="dark-mode"
                           onClick={() => setDarkMode(!darkMode)}
                           className="flex cursor-pointer items-center [@media(max-width:360px)]:px-2 [@media(max-width:360px)]:py-2 px-3 py-3 rounded-4xl transition duration-300 
                                     bg-gray-200 text-gray-900 dark:bg-gray-900 dark:text-white"
@@ -61,10 +61,9 @@ function Portfolio() {
                 </div>
               </section>
           <Home />
+          <Works />
         </div>
       </div>
-      <div id="works" className="w-full flex justify-center"><Works /></div>
-      <div id="tech" className="w-full flex justify-center"><Tech /></div>
     </div>
   );
 }
