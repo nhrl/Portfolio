@@ -1,18 +1,18 @@
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { RiStackLine } from "react-icons/ri";
 import { TbApi } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
 import { MdPermPhoneMsg } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa6";
+import { SiGraphql } from "react-icons/si";
+import { RiRobot2Line } from "react-icons/ri";
 
 import Tags from "../components/tags";
 import { 
   Typescript, Next, Node, 
   ReactNative, Angular,
   MySQL, Laravel, Js,
-  Tailwind, Vite, php, postgree, express, bootsrap,
+  Tailwind, Vite, postgree, express,
   postman, git, vscode} from "../assets";
 
 const frontend = [
@@ -23,17 +23,16 @@ const frontend = [
     {svg:Tailwind, name:"Tailwind"},
     {svg:Next, name:"Next.js"},
     {svg:Vite, name:"Vite"},
-    {svg:bootsrap, name:"Bootstrap"},
 ]
 
 const backend = [
     {svg:Node, name:"Node.js"},
-    {svg:php, name:"PHP"},
     {svg:Laravel, name:"Laravel"},
     {svg:MySQL, name:"MySQL"},
     {svg:postgree, name:"PostgreSQL"},
-    {svg:<TbApi size={24}/>, name:"REST"},
     {svg:express, name:"Express.js"},
+    {svg:<TbApi size={24}/>, name:"REST"},
+    {svg:<SiGraphql size={24} color="#f5009b"/>, name:"GraphQL"},
 ]
 
 const devTools = [
@@ -41,6 +40,7 @@ const devTools = [
     {svg:vscode, name:"VsCode"},
     {svg:<FaGithub size={24}/>, name:"Github"},
     {svg:postman, name:"Postman"},
+    {svg:<RiRobot2Line size={24}/>, name:"ChatGPT"}
 ]
 
 function Home() {
@@ -54,9 +54,9 @@ function Home() {
                     <h1 className="font-medium text-xl">About</h1>
                 </div>
                 <div className="mx-2 text-[15px] mt-2">
-                    <p className="pb-2">I am a fresh graduate and a web and mobile developer who builds functional applications. I work with frontend and backend technologies like React, Angular, Next.js, Node.js, Laravel, and MySQL.</p>
+                    <p className="pb-2">I am a fresh graduate and a web and mobile developer focused on building functional and well-structured applications using <span className=" text-[#0D9488]">React</span>, <span className=" text-[#0D9488]">Node.js</span>, and <span className=" text-[#0D9488]">TypeScript</span>. I have experience working with both frontend and backend technologies.</p>
                     <p className="pb-2">I enjoy solving problems and writing clean, maintainable code. Whether working solo or in a team, I focus on creating reliable and efficient applications.</p>
-                    <p>In my free time, I explore new technologies and work on side projects.</p>
+                    <p>In my free time, I explore new technologies, work on side projects and read books.</p>
                 </div>
             </div>
             <div className="flex-1 border-[1px] border-gray-300 dark:border-[#232323] p-2 rounded-lg bg-[#ffffff] dark:bg-[#161716] transition duration-300">
@@ -65,19 +65,22 @@ function Home() {
                     <h1 className="font-medium text-xl">Contact</h1>
                 </div>
                 <a href="mailto:nhorielbalenzua1@gmail.com">
-                    <div className="rounded-md border-[1px] bg-gray-200 dark:bg-[#202020] dark:border-[#232323] p-2 mx-10 flex flex-col justify-center cursor-pointer">
+                    <div className="rounded-md border-[1px]  hover:bg-gray-100 border-gray-300 hover:border-[#0c0c0c] dark:border-[#232323] dark:hover:border-[#6d6c6c]  dark:hover:bg-[#161716] p-2 mx-10 flex flex-col justify-center cursor-pointer">
                         <h2>Email</h2>
                         <h2>nhorielbalenzua1@gmail.com</h2>
                     </div>
                 </a>
-                <div className="mt-10 flex items-center gap-2 p-2">
+                <div className="mt-5 flex items-center gap-2 p-2">
                     <CgProfile size={22}/>
                     <h1 className="font-medium text-xl">Socials</h1>
                 </div>
-                <div className="flex mx-2 justify-center gap-10 mt-3 pb-3 md:pb-0">
-                    <FaFacebook size={24} className="cursor-pointer"/>
-                    <FaInstagram size={24} className="cursor-pointer"/>
-                    <FaTiktok size={24} className="cursor-pointer"/>
+                <div className="flex mx-2 justify-center gap-10 mt-3 mb-5 md:pb-0">
+                    <a href="https://github.com/nhrl" aria-label="link-to-github" target="_blank" rel="noopener noreferrer">
+                        <FaGithub className="text-gray-900 dark:text-white cursor-pointer" size={22} />
+                    </a>
+                    <a href="http://www.linkedin.com/in/nhoriel-balenzua" aria-label="link-to-linkedIn" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="text-gray-900 dark:text-white cursor-pointer" size={22} />
+                    </a>
                 </div>
             </div>
         </div>
