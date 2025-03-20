@@ -85,10 +85,10 @@ function Portfolio() {
           <Works />
         </div>
         <div onClick={toggleVisibility} className="flex justify-center items-center bottom-3 right-2 md:bottom-5 md:right-5 rounded-full fixed w-13 h-13 cursor-pointer dark:bg-[#1b2535]">
-          <IoChatbubblesOutline size={25}/>           
+          <IoChatbubblesOutline size={30}/>           
         </div>
         { visible && (
-          <div className="w-5/6 fixed flex justify-end right-5 bottom-20 h-[35rem]">
+          <div className="w-5/6 fixed flex justify-end right-5 bottom-20">
             <Chat />
           </div>
         )}
