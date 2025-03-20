@@ -1,7 +1,9 @@
 import { LuSend } from "react-icons/lu";
 import { useState, useRef, useEffect } from "react";
 import axios from 'axios';
-import { ClipLoader } from "react-spinners";  // Loader Component
+import { SyncLoader } from "react-spinners";  
+import { LiaRobotSolid } from "react-icons/lia";
+import { GoDotFill } from "react-icons/go";
 
 const Chat = () => {
     const [messages, setMessages] = useState([
@@ -10,11 +12,29 @@ const Chat = () => {
 
     const [input, setInput] = useState("");
     const [typingMessage, setTypingMessage] = useState("");
-    const [isLoading, setIsLoading] = useState(false); // Typing Loader
+    const [isLoading, setIsLoading] = useState(false);
+    const [apiStatus, setApiStatus] = useState("Checking...");
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
+    const checkAPIStatus = async () => {
+        try {
+            const response = await axios.get('https://ai-assistant-e2qv.onrender.com/api/status');
+            if (response.data.status === 'online') {
+                setApiStatus("Online");
+            }
+        } catch (error) {
+            setApiStatus("Offline");
+        }
+    };
+
+    useEffect(() => {
+        checkAPIStatus();
+        const interval = setInterval(checkAPIStatus, 10000); 
+        return () => clearInterval(interval); 
+    }, []);
+
     const handleSend = async () => {
-        if (input.trim() === "") return;
+        if (input.trim() === "" || apiStatus !== "Online") return;
 
         setMessages((prev) => [
             ...prev,
@@ -22,13 +42,13 @@ const Chat = () => {
         ]);
 
         setTypingMessage("");
-        setIsLoading(true); // Show loader
+        setIsLoading(true);
 
         try {
             const response = await axios.post('https://ai-assistant-e2qv.onrender.com/api/chat', { message: input });
 
             const botResponseText = response.data.answer;
-            setIsLoading(false); // Hide loader when response arrives
+            setIsLoading(false);
 
             let index = -1;
             setTimeout(() => {
@@ -50,7 +70,7 @@ const Chat = () => {
             }, 500);
         } catch (error) {
             console.error("Error sending message:", error);
-            setIsLoading(false); // Hide loader on error
+            setIsLoading(false);
             setMessages((prev) => [
                 ...prev,
                 { id: messages.length + 2, text: "❌ Failed to connect to the AI API.", sender: "bot", timestamp: new Date().toLocaleTimeString() }
@@ -65,12 +85,19 @@ const Chat = () => {
     }, [messages, typingMessage, isLoading]);
 
     return (
-        <div className="border-[1px] dark:border-[#232323] h-full w-6/6 md:w-[28rem] rounded-xl dark:bg-[#131312]">
-            <div className="border-b-[1px] dark:border-[#232323] rounded-t-xl flex items-center pl-2 h-15">
-                <h1 className="text-lg">BuddyBot</h1>
+        <div className="border-[1px] dark:border-[#232323] h-full w-6/6 md:w-[28rem] rounded-xl bg-white dark:bg-[#131312]">
+            <div className="border-b-[1px] dark:border-[#232323] rounded-t-xl flex flex-col pl-5 py-2">
+                <div className="flex">
+                    <LiaRobotSolid size={25}/>
+                    <h1 className="text-md ml-2">BuddyBot</h1>
+                </div>
+                <div className="flex items-center pl-7">
+                    <GoDotFill color={apiStatus === "Online" ? "#4CAF50" : "#EF5350"} />
+                    <p className="text-sm">{apiStatus}</p>
+                </div>
             </div>
 
-            <div className="h-[27rem] p-4 overflow-y-scroll no-scrollbar">
+            <div className="h-[23rem] md:h-[27rem] p-4 overflow-y-scroll no-scrollbar scrollbar-hidden">
                 {messages.map((msg) => (
                     <div
                         key={msg.id}
@@ -84,7 +111,6 @@ const Chat = () => {
                     </div>
                 ))}
 
-                {/* Typing Animation */}
                 {typingMessage && (
                     <div className="bg-gray-200 dark:bg-[#171717] dark:text-[#c7c3c3] p-2 rounded-lg w-fit max-w-[75%]">
                         {typingMessage}
@@ -92,18 +118,16 @@ const Chat = () => {
                     </div>
                 )}
 
-                {/* Typing Loader */}
                 {isLoading && (
                     <div className="flex items-center gap-2 p-2 rounded-lg bg-gray-200 dark:bg-[#171717] dark:text-[#c7c3c3] w-fit max-w-[75%]">
-                        <ClipLoader size={15} color="#36d7b7" />
-                        <span>BuddyBot is typing...</span>
+                        <SyncLoader size={5} color="#848585"/>
                     </div>
                 )}
 
                 <div ref={messagesEndRef} />
             </div>
 
-            <div className="border-t-[1px] dark:border-[#232323] flex items-center px-2 pt-2">
+            <div className="border-t-[1px] dark:border-[#232323] flex items-center px-2 py-2">
                 <textarea
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
