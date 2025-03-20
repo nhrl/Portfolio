@@ -4,6 +4,7 @@ import axios from 'axios';
 import { SyncLoader } from "react-spinners";  
 import { LiaRobotSolid } from "react-icons/lia";
 import { GoDotFill } from "react-icons/go";
+import ReactMarkdown from 'react-markdown';
 
 const Chat = () => {
     const [messages, setMessages] = useState([
@@ -50,24 +51,25 @@ const Chat = () => {
             const botResponseText = response.data.answer;
             setIsLoading(false);
 
-            let index = -1;
-            setTimeout(() => {
-                const typingInterval = setInterval(() => {
-                    if (index < botResponseText.length) {
-                        setTypingMessage((prev) => prev + botResponseText[index]);
-                        index++;
-                    } else {
-                        clearInterval(typingInterval);
+            let displayedText = "";
+            let index = 0;
 
-                        setMessages((prev) => [
-                            ...prev,
-                            { id: messages.length + 2, text: botResponseText, sender: "bot", timestamp: new Date().toLocaleTimeString() }
-                        ]);
+            const typingInterval = setInterval(() => {
+                if (index < botResponseText.length) {
+                    displayedText += botResponseText[index];
+                    setTypingMessage(displayedText); // Update message in real-time
+                    index++;
+                } else {
+                    clearInterval(typingInterval);
 
-                        setTypingMessage("");
-                    }
-                }, 20);
-            }, 500);
+                    setMessages((prev) => [
+                        ...prev,
+                        { id: messages.length + 2, text: botResponseText, sender: "bot", timestamp: new Date().toLocaleTimeString() }
+                    ]);
+
+                    setTypingMessage("");
+                }
+            }, 20);
         } catch (error) {
             console.error("Error sending message:", error);
             setIsLoading(false);
@@ -100,20 +102,50 @@ const Chat = () => {
             <div className="h-[23rem] md:h-[27rem] p-4 overflow-y-scroll no-scrollbar scrollbar-hidden">
                 {messages.map((msg) => (
                     <div
-                        key={msg.id}
-                        className={`mb-2 p-2 rounded-lg w-fit max-w-[75%] ${
-                            msg.sender === "user"
-                                ? "bg-blue-500 text-white ml-auto"
-                                : "bg-gray-200 dark:bg-[#171717] dark:text-[#c7c3c3]"
-                        }`}
+                    key={msg.id}
+                    className={`mb-2 p-3 rounded-xl shadow-md w-fit max-w-[80%] break-words leading-relaxed ${
+                        msg.sender === "user"
+                            ? "bg-blue-500 text-white ml-auto"
+                            : "bg-gray-100 dark:bg-[#1e1e1e] dark:text-[#eaeaea]"
+                    }`}
                     >
-                        {msg.text}
-                    </div>
+                        <ReactMarkdown
+                            components={{
+                                p: ({ node, ...props }) => <p className="mb-2" {...props} />,
+                                strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
+                                em: ({ node, ...props }) => <em className="italic" {...props} />,
+                                code: ({ node, ...props }) => (
+                                    <code className="bg-gray-200 dark:bg-[#2d2d2d] p-1 rounded-md text-sm" {...props} />
+                                ),
+                                ul: ({ node, ...props }) => (
+                                    <ul className="list-disc ml-5 mb-2" {...props} />
+                                ),
+                                li: ({ node, ...props }) => (
+                                    <li className="ml-4" {...props} />
+                                ),
+                            }}
+                        >{msg.text}</ReactMarkdown>
+                    </div>         
                 ))}
 
                 {typingMessage && (
-                    <div className="bg-gray-200 dark:bg-[#171717] dark:text-[#c7c3c3] p-2 rounded-lg w-fit max-w-[75%]">
-                        {typingMessage}
+                    <div className="bg-gray-200 dark:bg-[#171717] dark:text-[#c7c3c3] p-3 rounded-lg w-fit max-w-[75%]">
+                        <ReactMarkdown
+                            components={{
+                                p: ({ node, ...props }) => <p className="mb-2" {...props} />,
+                                strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
+                                em: ({ node, ...props }) => <em className="italic" {...props} />,
+                                code: ({ node, ...props }) => (
+                                    <code className="bg-gray-200 dark:bg-[#2d2d2d] p-1 rounded-md text-sm" {...props} />
+                                ),
+                                ul: ({ node, ...props }) => (
+                                    <ul className="list-disc ml-5 mb-2" {...props} />
+                                ),
+                                li: ({ node, ...props }) => (
+                                    <li className="ml-4" {...props} />
+                                ),
+                            }}
+                        >{typingMessage}</ReactMarkdown>
                         <span className="animate-pulse">|</span>
                     </div>
                 )}
