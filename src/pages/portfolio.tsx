@@ -72,7 +72,7 @@ function Portfolio() {
                 </h2>
                 <div className="flex gap-3 items-center mt-1.5 md:mt-2">
                 <a
-                  href="/file/BalenzuaCV.pdf"
+                  href="BalenzuaCV.pdf"
                   download="BalenzuaCV.pdf"
                   aria-label="download-cv"
                 >
