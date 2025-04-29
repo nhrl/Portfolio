@@ -71,12 +71,17 @@ function Portfolio() {
                   Web Developer / Mobile Developer
                 </h2>
                 <div className="flex gap-3 items-center mt-1.5 md:mt-2">
+                <a
+                  href="/file/BalenzuaCV.pdf"
+                  download="BalenzuaCV.pdf"
+                  aria-label="download-cv"
+                >
                   <button
-                    aria-label="download-cv"
                     className="border-[1px] py-2 px-3 rounded-md cursor-pointer hover:bg-gray-100 border-gray-300 hover:border-[#0c0c0c] dark:border-[#232323] dark:hover:border-[#6d6c6c] dark:hover:bg-[#161716]"
                   >
                     Download CV
                   </button>
+                </a>
                 </div>
               </div>
             </div>
