@@ -5,6 +5,7 @@ import pgc_ecom from "./pictures/pcg_ecom.webp";
 import pgc_erp from "./pictures/pgc-erp.webp";
 import ccs_erp from "./pictures/ccs_erp.webp";
 import ccs_ecomm from "./pictures/ccs_ecomm.webp";
+import cinequest from "../assets/pictures/CineQuest.png"
 
 // Icons
 import Typescript from "./icons/Typescript.svg";
@@ -38,5 +39,5 @@ export {
   MySQL, Laravel, Firebase, VB, ccs_erp,
   ccs_ecomm, Js, Tailwind, Vite,
   php, postgree, express, bootsrap,
-  postman, git, vscode
+  postman, git, vscode, cinequest
 };

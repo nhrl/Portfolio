@@ -8,7 +8,7 @@ import {
   Typescript, Next, Node, Supabase, 
   ReactNative, Expo, SQLite, Angular,
   MySQL, Laravel, Firebase, VB,
-  ccs_erp, ccs_ecomm} from "../assets";
+  ccs_erp, ccs_ecomm, cinequest, } from "../assets";
 
 
 const projects = [
@@ -22,6 +22,22 @@ const projects = [
         ],
     links:[
       {web:"https://icb-gym.vercel.app/", github:"https://github.com/nhrl/icb-gym.git"}
+    ]
+  },
+  {
+    image: cinequest,
+    title: "CineQuest",
+    description: "CineQuest is a movie and TV series discovery platform built with React and Vite. It offers users the ability to browse, search, and explore movies and series, complete with detailed information and a modern, responsive UI.",
+    tags: [
+      { svg:Typescript, name: "TypeScript" },
+      { svg:Supabase, name: "React.js" },
+      { svg:Supabase, name: "Vite" },
+      { svg:Supabase, name: "Tailwind CSS" },
+      { svg:Supabase, name: "TMDB API" },
+      { svg:Supabase, name: "Node.js" }
+    ],
+    links: [
+      { web: "https://cine-quest-seven.vercel.app/", github: "https://github.com/nhrl/CineQuest.git" }
     ]
   },
   { 
