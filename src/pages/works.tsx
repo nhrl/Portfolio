@@ -33,7 +33,8 @@ const projects = [
       { svg:Supabase, name: "React.js" },
       { svg:Supabase, name: "Vite" },
       { svg:Supabase, name: "Tailwind CSS" },
-      { svg:Supabase, name: "TMDB API" }
+      { svg:Supabase, name: "TMDB API" },
+      { svg:Supabase, name: "PWA" }
     ],
     links: [
       { web: "https://cine-quest-seven.vercel.app/", github: "https://github.com/nhrl/CineQuest.git" }
